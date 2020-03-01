@@ -7,12 +7,11 @@ defmodule Mpesa do
   Gets the URL , depending on the env.
   """
   def get_url do
-    # if Application.get_env(:mpesa, :mpesa_short_code) === "sandbox" do
-    #   "https://sandbox.safaricom.co.ke"
-    # else
-    #   "https://production.safaricom.co.ke"
-    # end
-    Application.get_env(:mpesa, :mpesa_short_code)
+    if Application.get_env(:mpesa, :env) === "sandbox" do
+      "https://sandbox.safaricom.co.ke"
+    else
+      "https://production.safaricom.co.ke"
+    end
   end
 
   @doc """
@@ -77,7 +76,7 @@ defmodule Mpesa do
         request(token, amount, phone, reference, description)
 
       {:error, message} ->
-        IO.inspect(message)
+        {:error, message}
     end
   end
 
