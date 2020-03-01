@@ -15,6 +15,22 @@ end
 ```
 Run `mix deps.get` to fetch from Hex
 
+## Configuration
+
+Add below cofix to dec.exs / prod.exs files
+This asumes you have a clear understanding of how Daraja API works.
+
+```elixir
+config :mpesa,
+  env: "sandbox",
+  consumer_key: "",
+  consumer_secret: "",
+  mpesa_short_code: "",
+  mpesa_passkey: "",
+  mpesa_callback_url: ""
+```
+
+
 ## Usage 
 
 ```elixir
