@@ -11,14 +11,14 @@ defmodule Mpesa.MixProject do
       package: package(),
       deps: deps(),
       # Docs
-      name: "Mpesa STK",
+      name: "Mpesa Elixir",
       source_url: "https://github.com/manuelgeek/mpesa_elixir.git",
-      homepage_url: "https://github.com/manuelgeek/mpesa_elixir.git",
+      homepage_url: "https://hexdocs.pm/mpesa/Mpesa.html",
       docs: [
         # The main page in the docs
-        main: "Mpesa STK",
-        logo:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png",
+        main: "Mpesa Elixir",
+        # logo:
+        #   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png",
         extras: ["README.md"]
       ]
     ]
@@ -28,7 +28,10 @@ defmodule Mpesa.MixProject do
     [
       maintainers: [" ManuEl Magak "],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/manuelgeek/mpesa_elixir.git"}
+      links: %{
+        "GitHub" => "https://github.com/manuelgeek/mpesa_elixir.git",
+        "Documentation" => "https://hexdocs.pm/mpesa/Mpesa.html"
+      }
     ]
   end
 
@@ -46,8 +49,6 @@ defmodule Mpesa.MixProject do
       {:httpoison, "~> 1.6"},
       {:timex, "~> 3.5"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
 end

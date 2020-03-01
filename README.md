@@ -48,7 +48,7 @@ iex> Mpesa.make_request(10, "254724540039", "reference", "description")
 ```
 
 ## Documentation 
- [https://hexdocs.pm/mpesa](https://hexdocs.pm/mpesa).
+ [https://hexdocs.pm/mpesa](https://hexdocs.pm/mpesa/Mpesa.html).
 
  ## AUthor 
 
