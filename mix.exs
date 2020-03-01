@@ -30,7 +30,8 @@ defmodule Mpesa.MixProject do
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/manuelgeek/mpesa_elixir.git",
-        "Documentation" => "https://hexdocs.pm/mpesa/Mpesa.html"
+        "Documentation" => "https://hexdocs.pm/mpesa/Mpesa.html",
+        "README" => "https://hexdocs.pm/mpesa/readme.html"
       }
     ]
   end

@@ -17,12 +17,27 @@ Run `mix deps.get` to fetch from Hex
 
 ## Configuration
 
-Add below cofix to dec.exs / prod.exs files
+Add below config to dec.exs / prod.exs files
 This asumes you have a clear understanding of how Daraja API works.
 
+The `env` is either `sandbox` or `production`
+
+`dev.exs` These are sandbox credentials given by Safaricom
 ```elixir
 config :mpesa,
   env: "sandbox",
+  consumer_key: "72yw1nun6g1QQPPgOsAObCGSfuimGO7b",
+  consumer_secret: "vRzZiD5RllMLIdLD",
+  mpesa_short_code: "174379",
+  mpesa_passkey: "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+  mpesa_callback_url: "http://91eb0af5.ngrok.io/api/payment/callback"
+  ```
+
+
+`prod.secret.exs`
+```elixir
+config :mpesa,
+  env: "production",
   consumer_key: "",
   consumer_secret: "",
   mpesa_short_code: "",
