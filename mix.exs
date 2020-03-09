@@ -4,7 +4,7 @@ defmodule Mpesa.MixProject do
   def project do
     [
       app: :mpesa,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       description: "This is wrapper for Daraja Mpesa STK implementation(Lipa na Mpesa Online)",

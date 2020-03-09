@@ -10,7 +10,7 @@ defmodule Mpesa do
     if Application.get_env(:mpesa, :env) === "sandbox" do
       "https://sandbox.safaricom.co.ke"
     else
-      "https://production.safaricom.co.ke"
+      "https://api.safaricom.co.ke"
     end
   end
 
