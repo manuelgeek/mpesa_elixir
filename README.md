@@ -9,7 +9,7 @@ by adding `mpesa` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mpesa, "~> 0.1.0"}
+    {:mpesa, "~> 0.1.1"}
   ]
 end
 ```
@@ -17,7 +17,7 @@ Run `mix deps.get` to fetch from Hex
 
 ## Configuration
 
-Add below config to dec.exs / prod.exs files
+Add below config to dec.exs / prod.exs files 
 This asumes you have a clear understanding of how Daraja API works.
 
 The `env` is either `sandbox` or `production`

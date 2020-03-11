@@ -16,7 +16,7 @@ defmodule Mpesa.MixProject do
       homepage_url: "https://hexdocs.pm/mpesa/Mpesa.html",
       docs: [
         # The main page in the docs
-        main: "Mpesa Elixir",
+        main: "Mpesa",
         # logo:
         #   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png",
         extras: ["README.md"]
