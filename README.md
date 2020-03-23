@@ -9,7 +9,7 @@ by adding `mpesa` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mpesa, "~> 0.1.1"}
+    {:mpesa, "~> 0.1.2"}
   ]
 end
 ```

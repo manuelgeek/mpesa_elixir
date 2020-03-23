@@ -3,9 +3,7 @@ defmodule Mpesa do
   Documentation for `Mpesa`.
   """
 
-  @doc """
-  Gets the URL , depending on the env.
-  """
+  @doc false
   def get_url do
     if Application.get_env(:mpesa, :env) === "sandbox" do
       "https://sandbox.safaricom.co.ke"
@@ -14,16 +12,7 @@ defmodule Mpesa do
     end
   end
 
-  @doc """
-  Gets the Access Token .
-
-  ## Examples
-
-      iex> Mpesa.authorize()
-      {:ok, "zUqIM1WR9cfG2KHHtrk0B8NTQrLX"}
-      {:error, "Wrong Credentials"}
-
-  """
+  @doc false
   def authorize do
     url = get_url() <> "/oauth/v1/generate?grant_type=client_credentials"
 
@@ -43,10 +32,12 @@ defmodule Mpesa do
     get_token(response)
   end
 
+  @doc false
   def get_token(%{status_code: 400} = _response) do
     {:error, "Wrong Credentials"}
   end
 
+  @doc false
   def get_token(%{status_code: 200, body: body} = _response) do
     {:ok, body} = body |> Poison.decode()
     {:ok, body["access_token"]}
@@ -54,6 +45,36 @@ defmodule Mpesa do
 
   @doc """
   Initiates the Mpesa Lipa Online STK Push .
+
+  ## Configuration
+
+  Add below config to dec.exs / prod.exs files 
+  This asumes you have a clear understanding of how Daraja API works.
+
+  The `env` is either `sandbox` or `production`
+
+  `dev.exs` These are sandbox credentials given by Safaricom
+  ```elixir
+  config :mpesa,
+  env: "sandbox",
+  consumer_key: "72yw1nun6g1QQPPgOsAObCGSfuimGO7b",
+  consumer_secret: "vRzZiD5RllMLIdLD",
+  mpesa_short_code: "174379",
+  mpesa_passkey: "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+  mpesa_callback_url: "http://91eb0af5.ngrok.io/api/payment/callback"
+  ```
+
+
+  `prod.secret.exs`
+  ```elixir
+  config :mpesa,
+  env: "production",
+  consumer_key: "",
+  consumer_secret: "",
+  mpesa_short_code: "",
+  mpesa_passkey: "",
+  mpesa_callback_url: ""
+  ```
 
   ## Examples
 
@@ -77,9 +98,13 @@ defmodule Mpesa do
 
       {:error, message} ->
         {:error, message}
+
+      _ ->
+        {:error, 'An Error occurred, try again'}
     end
   end
 
+  @doc false
   def request(token, amount, phone, reference, description) do
     url = get_url() <> "/mpesa/stkpush/v1/processrequest"
     paybill = Application.get_env(:mpesa, :mpesa_short_code)
@@ -112,11 +137,19 @@ defmodule Mpesa do
     get_response_body(response)
   end
 
+  @doc false
   def get_response_body(%{status_code: 200, body: body} = _response) do
     {:ok, _body} = body |> Poison.decode()
   end
 
+  @doc false
   def get_response_body(%{status_code: 404} = _response) do
     {:error, "Invalid Access Token"}
+  end
+
+  @doc false
+  def get_response_body(%{status_code: 500} = _response) do
+    {:error,
+     "Unable to lock subscriber, a transaction is already in process for the current subscriber"}
   end
 end
