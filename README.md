@@ -1,5 +1,17 @@
-# Mpesa 
+![hex badge](https://img.shields.io/hexpm/dt/mpesa)
+# Mpesa Elixir
 Phoenix(Elixir) wrapper for Mpesa STK(Lipa na Mpesa Online) implentation.
+
+## Table of contents
+ - [Fueatures](#features)
+ - [Installation](#installation)
+ - [Configuration](#configuration)
+ - [Usage](#usage)
+ - [Documentation](#documentation)
+ - [Author](#author)
+ - [Licence](#licence)
+
+## Features
 
 ## Installation
 
@@ -65,10 +77,19 @@ iex> Mpesa.make_request(10, "254724540039", "reference", "description")
 ## Documentation 
  [https://hexdocs.pm/mpesa](https://hexdocs.pm/mpesa/Mpesa.html).
 
- ## AUthor 
+ ## Author
+ <p align="center"><img src="https://magak.me/assets/images/Geek-logo.png" width="150"></p>
+ 
 
-[ManuEl Geek](https://manuel.appslab.co.ke)
+[ManuEl Geek](https://magak.me)
 
 ## Licence
 
 Mpesa Elixir is released under [MIT License](https://github.com/appcues/exsentry/blob/master/LICENSE.txt)
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](#)
+
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source-200x33.png?v=103)](#)
+
+
+Happy coding, Star before Fork 😊💪💯
