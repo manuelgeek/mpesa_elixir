@@ -1,3 +1,4 @@
+[![Build Status](https://www.travis-ci.com/manuelgeek/mpesa_elixir.svg?branch=master)](https://www.travis-ci.com/manuelgeek/mpesa_elixir)
 ![hex badge](https://img.shields.io/hexpm/dt/mpesa)
 # Mpesa Elixir
 Phoenix(Elixir) wrapper for Mpesa STK(Lipa na Mpesa Online) implentation.
