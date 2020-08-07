@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :mpesa,
-  env: "sandbox",
+env: "sandbox",
   consumer_key: "72yw1nun6g1QQPPgOsAObCGSfuimGO7b",
   consumer_secret: "vRzZiD5RllMLIdLD",
   mpesa_short_code: "174379",

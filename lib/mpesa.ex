@@ -10,7 +10,8 @@ defmodule Mpesa do
     else
       "https://api.safaricom.co.ke"
     end
-  end
+  endgs
+  
 
   @doc false
   def authorize do

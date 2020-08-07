@@ -4,7 +4,7 @@
 Phoenix(Elixir) wrapper for Mpesa STK(Lipa na Mpesa Online) implentation.
 
 ## Table of contents
- - [Fueatures](#features)
+ - [Features](#features)
  - [Installation](#installation)
  - [Configuration](#configuration)
  - [Usage](#usage)
